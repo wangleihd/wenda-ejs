@@ -1,0 +1,37 @@
+
+  <!-- Timeline -->
+  <div class="timeline">
+
+    <!-- Line component -->
+    <div class="line text-muted"></div>
+
+    <!-- Separator -->
+    <div class="separator text-muted">
+      <time><%= moment(infor.time).zone(-8).format('MM-DD, hh:mm') %></time>
+    </div>
+    <!-- /Separator -->
+    <!-- Panel -->
+    <article class="panel panel-primary">
+      <!-- Icon -->
+      <div class="panel-heading icon">
+        <i class="glyphicon glyphicon-question-sign"></i>
+      </div>
+      <!-- /Icon -->
+      <!-- Heading -->
+      <div class="panel-heading">
+        <h2 class="panel-title"><%= infor.title %></h2>
+      </div>
+      <!-- /Heading -->
+      <!-- Body -->
+      <div class="panel-body">
+        <%= infor.content %>
+      </div>
+      <!-- /Body -->
+
+      <!-- Footer -->
+      <div class="panel-footer">
+        <small>Auth: <%= infor.name %> </small>
+      </div>
+      <!-- /Footer -->
+    </article>
+    <!-- /Panel -->

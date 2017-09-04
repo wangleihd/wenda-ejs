@@ -1,28 +1,36 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Optional theme -->
-    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
-  </head>
+<%- include head %>
   <body>
-    <div>
-            <% if(name) { %>
-              <a href="/logout"  class="btn btn-default btn-md"> <%= name %> > logout <i class="fa fa-sign-out"></i></a>
-            <% } else { %>
-              <a href="/login">login</a> |
-              <a href="/register">register</a>
-            <% } %>
+    <%- include nav %>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Hello, world!</h1>
+        <p>...</p>
+        <p><a class="btn btn-primary btn-lg" href="/question" role="button">Quest</a></p>
+      </div>
     </div>
-    <div id="react-root"></div>
-    <script type='text/javascript'>
-    window.ejsname = '<%- name %>';
-    window.ejsinfo = '<%- data %>';
-    var userFromServer = <%- JSON.stringify(data) %>
-    </script>
-    <script type="text/javascript" src="/js/vender.js"></script>
-    <script type="text/javascript" src="/js/index.js"></script>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9">
+          <div class="panel panel-primary">
+            <div class="panel-body">
+              <!-- Table -->
+              <% data.forEach(function(item, index){ %>
+                <%- include('cell', {item: item}) %>
+
+              <% }) %>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="panel panel-warning">
+            <div class="panel-body">
+              Basic panel example
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </body>
   </html>

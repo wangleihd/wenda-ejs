@@ -18,6 +18,8 @@ var users = require('./routes/users');
 var login = require('./routes/login');
 var logout = require('./routes/logout');
 var register = require('./routes/register');
+const quest = require('./routes/quest');
+const infor = require('./routes/infor');
 
 var app = express();
 app.use(session({
@@ -45,7 +47,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+// app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -57,6 +59,8 @@ app.use('/users', users);
 app.use('/login', login);
 app.use('/logout', logout);
 app.use('/register', register);
+app.use('/question', quest);
+app.use('/q', infor);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

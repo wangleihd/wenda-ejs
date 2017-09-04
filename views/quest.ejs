@@ -1,0 +1,31 @@
+<%- include head %>
+  <body>
+    <%- include nav %>
+    <div class="container">
+      <div class="col-md-6">
+        <div class="form-area">
+          <form role="form" method="post" action="/question">
+            <br style="clear:both">
+            <h3 style="margin-bottom: 25px; text-align: center;">Contact Form</h3>
+            <div class="form-group">
+              <input type="text" class="form-control" id="name" name="title" placeholder="Title" required>
+            </div>
+            <div class="form-group">
+              <select class="select" name="label">
+                <option value="JavaScript">JavaScript</option>
+                <option value="CSS">CSS</option>
+                <option value="Node.js">Node.js</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" type="textarea" id="message" name="content" placeholder="Message" maxlength="140" rows="7"></textarea>
+              <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>
+            </div>
+
+            <button type="submit" id="submit" class="btn btn-primary pull-right">Submit Form</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

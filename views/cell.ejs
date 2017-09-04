@@ -1,0 +1,11 @@
+<div class="row ">
+  <div class="title">
+    <div class="col-md-2">
+      <span class="label label-danger"><%= item.depiao %></span>
+    <span class="label label-info"><%= item.huida %></span>
+    <span class="label label-warning"><%= item.liulan %></span></div>
+    <div class="col-md-6"><a href="/q/<%= item._id %>"><%= item.title %></a></div>
+    <div class="col-md-4"><span class="label label-primary"><%= item.label %></span>&nbsp;<%= item.name %>&nbsp;
+      <%= moment(item.time).zone(-8).format('MM-DD, hh:mm') %></div>
+  </div>
+</div>

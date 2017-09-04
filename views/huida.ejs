@@ -1,0 +1,35 @@
+<!-- Timeline -->
+<div class="timeline">
+
+  <!-- Line component -->
+  <div class="line text-muted"></div>
+
+  <!-- Separator -->
+  <div class="separator text-muted">
+    <time><%= moment(huida.time).zone(-8).format('MM-DD, hh:mm') %></time>
+  </div>
+  <!-- /Separator -->
+  <!-- Panel -->
+  <article class="panel panel-primary">
+    <!-- Icon -->
+    <div class="panel-heading icon">
+      <% if(huida.dianzan){ %>
+        <b><%= huida.dianzan%></b>
+      <% } else { %>
+        <i class="fa fa-thumbs-up dianzan" index="<%= index %>" aria-hidden="true"></i>
+      <% } %>
+    </div>
+    <!-- /Icon -->
+    <!-- Body -->
+    <div class="panel-body">
+      <%= huida.content %>
+    </div>
+    <!-- /Body -->
+
+    <!-- Footer -->
+    <div class="panel-footer">
+      <small>Auth: <%= huida.name %> </small>
+    </div>
+    <!-- /Footer -->
+  </article>
+  <!-- /Panel -->

@@ -1,0 +1,54 @@
+<%- include head %>
+  <body>
+    <%- include nav %>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <div>
+            <%- include('content', {infor: data}) %>
+            <% data.huida_id.forEach(function(huida, index){ %>
+              <%- include('huida', {huida: huida, index: index}) %>
+              <% }) %>
+
+          </div>
+        <div class="panel">
+            <div class="panel-body">
+              <% if(name){ %>
+                <div class="reglog">
+                  <a href="/login">Login</a>
+                  <a href="/register">register</a>
+                </div>
+              <% } else { %>
+                <form role="form" method="post" action="/q/<%= data._id%>">
+                  <br style="clear:both">
+                  <div class="form-group">
+                    <textarea class="form-control" type="textarea" id="message" placeholder="Message" name="content" maxlength="140" rows="7"></textarea>
+                    <span class="help-block"></span>
+                  </div>
+                  <button type="submit" id="submit" class="btn btn-primary pull-right">Submit Form</button>
+                </form>
+              <% } %>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <!-- <div class="panel panel-warning">
+            <div class="panel-body">
+              Basic panel example
+            </div>
+          </div> -->
+        </div>
+      </div>
+
+    </div>
+    <script type="text/javascript">
+    $(function(){
+      $('div .dianzan').click(function(){
+          var index = $(this).attr('index');
+          console.log(index);
+      })
+    })
+
+    </script>
+  </body>
+  </html>
